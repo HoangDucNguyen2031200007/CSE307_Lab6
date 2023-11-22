@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers from 1 to N</title>
+  </head>
+  <body>
+    <h2>Numbers from 1 to N</h2>
+    <p>
+      <label for="input-field">Enter a positive integer N:</label>
+      <input type="text" id="input-field" />
+      <input type="submit" value="Print Numbers" onclick="numbersToN()" />
+    </p>
+    <p id="result"></p>
+
+    <script>
+      function numbersToN() {
+        var n = document.getElementById("input-field").value;
+        if (n < 0) {
+          document.getElementById("result").innerHTML =
+            "Please enter a valid positive integer.";
+        } else {
+          for (var i = 1; i <= n; i++) {
+            document.getElementById("result").innerHTML += i + " ";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

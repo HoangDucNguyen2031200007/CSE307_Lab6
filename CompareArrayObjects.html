@@ -1,0 +1,61 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare Array Objects</title>
+  </head>
+  <body>
+    <div
+      id="product-box"
+      style="display: flex; flex: 1; justify-content: center"
+    ></div>
+
+    <script>
+      const product2 = {
+        title: "The Alchemist",
+        image: "img/BARC.png",
+        price: 182700,
+      };
+      const product3 = {
+        title: "Learning How to Learn",
+        image: "img/Book.png",
+        price: 251100,
+      };
+      const product1 = {
+        title: "Thinking, Fast and Slow",
+        image: "img/Davinci.png",
+        price: 299700,
+      };
+
+      const productList = [product1, product2, product3];
+      productList.sort(compare);
+
+      for (var i = 0; i < productList.length; i++) {
+        document.getElementById(
+          "product-box"
+        ).innerHTML += `<div style="display: flex; flex:0.3; flex-direction: column; border: 1px solid black; text-align: center">
+              <p style="font-weight: bold; font-size: 20; font-family: sans-serif">${
+                productList[i].title
+              }</p>
+          <p><img src="${
+            productList[i].image
+          }" style="width: 200px; height: 300px"/></p>
+          <p style="font-weight: bold; font-size: 20; font-family: sans-serif">${new Intl.NumberFormat(
+            "de-DE",
+            {}
+          ).format(productList[i].price)} VND</p>
+      </div>`;
+      }
+
+      function compare(a, b) {
+        if (a.price < b.price) {
+          return -1;
+        }
+        if (a.price > b.price) {
+          return 1;
+        }
+        return 0;
+      }
+    </script>
+  </body>
+</html>

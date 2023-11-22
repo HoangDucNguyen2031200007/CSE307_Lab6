@@ -1,0 +1,136 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProductList</title>
+  </head>
+  <body>
+    <script>
+      const product1 = {
+        id: 1,
+        title: "The Alchemist",
+        image: "img/BARC.png",
+        price: 182700,
+        quantity: 10,
+      };
+      const product2 = {
+        id: 2,
+        title: "Learning How to Learn",
+        image: "img/Book.png",
+        price: 251100,
+        quantity: 7,
+      };
+      const product3 = {
+        id: 3,
+        title: "Thinking, Fast and Slow",
+        image: "img/Davinci.png",
+        price: 299700,
+        quantity: 12,
+      };
+      const product4 = {
+        id: 4,
+        title: "Harry Potter",
+        image: "img/harrypotter.png",
+        price: 112800,
+        quantity: 24,
+      };
+      const product5 = {
+        id: 5,
+        title: "Visual Basic",
+        image: "img/VisualBasic.png",
+        price: 323100,
+        quantity: 67,
+      };
+
+      const newProduct1 = {
+        id: 6,
+        title: "IT Basics",
+        image: "img/Book.png",
+        price: 23700,
+        quantity: 142,
+      };
+
+      const newProduct2 = {
+        id: 7,
+        title: "ABC Books",
+        image: "img/logoABCbook.png",
+        price: 476300,
+        quantity: 2,
+      };
+
+      const productList = [product1, product2, product3, product4, product5];
+
+      console.log("Initial Product:");
+      for (var i = 0; i < productList.length; i++) {
+        console.log(
+          "ID: " +
+            productList[i].id +
+            ", Name: " +
+            productList[i].title +
+            ", Quantity: " +
+            productList[i].quantity +
+            ", Price: " +
+            productList[i].price +
+            ", Image: " +
+            productList[i].image
+        );
+      }
+
+      productList.sort(compareName);
+      productList.unshift(newProduct1);
+      productList.push(newProduct2);
+
+      foundProduct = productList.find(
+        (o) => o.title === "Learning How to Learn"
+      );
+
+      console.log("");
+      console.log("Search Result:");
+      console.log(
+        "ID: " +
+          foundProduct.id +
+          ", Name: " +
+          foundProduct.title +
+          ", Quantity: " +
+          foundProduct.quantity +
+          ", Price: " +
+          foundProduct.price +
+          ", Image: " +
+          foundProduct.image
+      );
+
+      foundProduct2Index = productList.findIndex((o) => o.id === 7);
+      productList.splice(foundProduct2Index, 1);
+
+      foundProductById = productList.find((o) => o.id === 1);
+      foundProductById.quantity = 17;
+
+      console.log("");
+      console.log("Updated Product:");
+      for (var i = 0; i < productList.length; i++) {
+        console.log(
+          "ID: " +
+            productList[i].id +
+            ", Name: " +
+            productList[i].title +
+            ", Quantity: " +
+            productList[i].quantity +
+            ", Price: " +
+            productList[i].price +
+            ", Image: " +
+            productList[i].image
+        );
+      }
+
+      function compareName(a, b) {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      }
+    </script>
+  </body>
+</html>

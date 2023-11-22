@@ -1,0 +1,147 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parsing numbers</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th><b>str</b></th>
+          <th><b>parseInt(str)</b></th>
+          <th><b>parseFloat(str)</b></th>
+          <th><b>Number(str)</b></th>
+          <th><b>+str</b></th>
+          <th><b>str | 0</b></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="str1"></td>
+          <td id="parseIntStr1"></td>
+          <td id="parseFloatStr1"></td>
+          <td id="numberStr1"></td>
+          <td id="plusStr1"></td>
+          <td id="zeroStr1"></td>
+        </tr>
+        <tr>
+          <td id="str2"></td>
+          <td id="parseIntStr2"></td>
+          <td id="parseFloatStr2"></td>
+          <td id="numberStr2"></td>
+          <td id="plusStr2"></td>
+          <td id="zeroStr2"></td>
+        </tr>
+        <tr>
+          <td id="str3"></td>
+          <td id="parseIntStr3"></td>
+          <td id="parseFloatStr3"></td>
+          <td id="numberStr3"></td>
+          <td id="plusStr3"></td>
+          <td id="zeroStr3"></td>
+        </tr>
+        <tr>
+          <td id="str4"></td>
+          <td id="parseIntStr4"></td>
+          <td id="parseFloatStr4"></td>
+          <td id="numberStr4"></td>
+          <td id="plusStr4"></td>
+          <td id="zeroStr4"></td>
+        </tr>
+        <tr>
+          <td id="str5"></td>
+          <td id="parseIntStr5"></td>
+          <td id="parseFloatStr5"></td>
+          <td id="numberStr5"></td>
+          <td id="plusStr5"></td>
+          <td id="zeroStr5"></td>
+        </tr>
+        <tr>
+          <td id="str6"></td>
+          <td id="parseIntStr6"></td>
+          <td id="parseFloatStr6"></td>
+          <td id="numberStr6"></td>
+          <td id="plusStr6"></td>
+          <td id="zeroStr6"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      var str1 = "1234";
+      var str2 = "1234abc";
+      var str3 = "0.15";
+      var str4 = "3.14ivan";
+      var str5 = "Inifinity";
+      var str6 = "999999999999999999999999";
+
+      document.getElementById("str1").innerHTML = str1;
+      document.getElementById("parseIntStr1").innerHTML = doParseInt(str1);
+      document.getElementById("parseFloatStr1").innerHTML = doParseFloat(str1);
+      document.getElementById("numberStr1").innerHTML = doNumber(str1);
+      document.getElementById("plusStr1").innerHTML = doPlus(str1);
+      document.getElementById("zeroStr1").innerHTML = doZero(str1);
+
+      document.getElementById("str2").innerHTML = str2;
+      document.getElementById("parseIntStr2").innerHTML = doParseInt(str2);
+      document.getElementById("parseFloatStr2").innerHTML = doParseFloat(str2);
+      document.getElementById("numberStr2").innerHTML = doNumber(str2);
+      document.getElementById("plusStr2").innerHTML = doPlus(str2);
+      document.getElementById("zeroStr2").innerHTML = doZero(str2);
+
+      document.getElementById("str3").innerHTML = str3;
+      document.getElementById("parseIntStr3").innerHTML = doParseInt(str3);
+      document.getElementById("parseFloatStr3").innerHTML = doParseFloat(str3);
+      document.getElementById("numberStr3").innerHTML = doNumber(str3);
+      document.getElementById("plusStr3").innerHTML = doPlus(str3);
+      document.getElementById("zeroStr3").innerHTML = doZero(str3);
+
+      document.getElementById("str4").innerHTML = str4;
+      document.getElementById("parseIntStr4").innerHTML = doParseInt(str4);
+      document.getElementById("parseFloatStr4").innerHTML = doParseFloat(str4);
+      document.getElementById("numberStr4").innerHTML = doNumber(str4);
+      document.getElementById("plusStr4").innerHTML = doPlus(str4);
+      document.getElementById("zeroStr4").innerHTML = doZero(str4);
+
+      document.getElementById("str5").innerHTML = str5;
+      document.getElementById("parseIntStr5").innerHTML = doParseInt(str5);
+      document.getElementById("parseFloatStr5").innerHTML = doParseFloat(str5);
+      document.getElementById("numberStr5").innerHTML = doNumber(str5);
+      document.getElementById("plusStr5").innerHTML = doPlus(str5);
+      document.getElementById("zeroStr5").innerHTML = doZero(str5);
+
+      document.getElementById("str6").innerHTML = str6;
+      document.getElementById("parseIntStr6").innerHTML = doParseInt(str6);
+      document.getElementById("parseFloatStr6").innerHTML = doParseFloat(str6);
+      document.getElementById("numberStr6").innerHTML = doNumber(str6);
+      document.getElementById("plusStr6").innerHTML = doPlus(str6);
+      document.getElementById("zeroStr6").innerHTML = doZero(str6);
+
+      function doParseInt(str) {
+        return parseInt(str);
+      }
+      function doParseFloat(str) {
+        return parseFloat(str);
+      }
+      function doNumber(str) {
+        return Number(str);
+      }
+      function doPlus(str) {
+        return +str;
+      }
+      function doZero(str) {
+        return str | 0;
+      }
+    </script>
+
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </body>
+</html>

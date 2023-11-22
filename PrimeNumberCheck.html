@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number Check</title>
+  </head>
+  <body>
+    <h2>Prime Check</h2>
+    <p>
+      <label for="input-field">Enter a positive integer N:</label>
+      <input type="text" id="input-field" />
+      <input type="submit" value="Check Prime" onclick="checkPrime()" />
+    </p>
+    <p id="result"></p>
+
+    <script>
+      function checkPrime() {
+        var n = document.getElementById("input-field").value;
+        if (n <= 2) {
+          document.getElementById("result").innerHTML =
+            "Please enter a valid positive integer that's not 1 or 2.";
+        } else {
+          for (var i = 2; i < n; i++) {
+            if (n % i === 0) {
+              document.getElementById("result").innerHTML = "false";
+              break;
+            } else {
+              document.getElementById("result").innerHTML = "true";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

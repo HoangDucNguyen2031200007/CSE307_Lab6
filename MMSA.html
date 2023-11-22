@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMSA</title>
+  </head>
+  <body>
+    <h2>MMSA of N numbers</h2>
+    <p>
+      <label for="input-field">Enter numbers seperated by commas:</label>
+      <input type="text" id="input-field" />
+      <input type="submit" value="Calculate MMSA" onclick="calc()" />
+    </p>
+    <div id="result"></div>
+
+    <script>
+      function calc() {
+        document.getElementById("result").innerHTML = "";
+
+        const inputList = document.getElementById("input-field").value;
+        const numberListAsString = inputList.split(",");
+        const numberList = numberListAsString.map(function (str) {
+          return parseInt(str);
+        });
+
+        var min = Math.min(...numberList);
+        var max = Math.max(...numberList);
+        var sum = 0;
+        for (var i = 0; i < numberList.length; i++) {
+          sum += numberList[i];
+        }
+        var avg = sum / numberList.length;
+
+        document.getElementById("result").innerHTML += `
+            <p>Min: ${(Math.round(min * 100) / 100).toFixed(2)}</p>
+            <p>Max: ${(Math.round(max * 100) / 100).toFixed(2)}</p>
+            <p>Sum: ${(Math.round(sum * 100) / 100).toFixed(2)}</p>
+            <p>Avg: ${(Math.round(avg * 100) / 100).toFixed(2)}</p>
+        `;
+
+        // if (n <= 2) {
+        //   document.getElementById("result").innerHTML =
+        //     "Please enter a valid positive integer that's not 1 or 2.";
+        // } else {
+        //   for (var i = 2; i < n; i++) {
+        //     if (n % i === 0) {
+        //       document.getElementById("result").innerHTML = "false";
+        //       break;
+        //     } else {
+        //       document.getElementById("result").innerHTML = "true";
+        //     }
+        //   }
+        // }
+      }
+    </script>
+  </body>
+</html>
